@@ -1,0 +1,34 @@
+﻿	- Creamos carpeta Services: Contendra una clase ApiServices. 
+		* Contiene la definición de las consultas a un web services.
+	
+	- Crear una arquitectura: V-M-VM (Vista-Modelo-VistaModelo), patrón de arquitectura de software.
+		=> Se caracteriza por tratar de desacoplar lo máximo posible la interfaz de usuario de la lógica de la aplicación.
+
+		* Creamos tres carpetas: View-Model-ViewModels
+		* Dentro de la carpeta "ViewModels", creamos la clase MainViewModel. Clase core de las ViewModels.
+
+	- Implementamos patron Infrastructure.
+		=> Es como una base de datos de microservicios. Contienen la implementación y definición real de componentes, elementos y objetos. 
+
+		* Creamos una clase llamada IntanceLocator.
+		* Creamos un Objeto tipo MainViewModel.
+		* Creamos el constructor, dentro de este se crea una instancia del Objeto tipo MainViewModel
+
+	- Creamos el diccionario de recursos en el App.xaml, que desde donde se lanza la aplicación
+		* Agregamos el xmlns (propiedad personalizada que referencia a un control o objeto) al App.xaml:
+			=> xmlns:Infrastructure="clr-namespace:ComponentesXamarinForms.Arquitectura.Infrastructure"
+			* Infrastructure: Nombre de la propiedad personalizada.
+			* namespace: namespace de donde encontramos la clase IntanceLocator.
+
+		* Agregamos, primer recurso al diccionario:  
+			=> <Infrastructure:IntanceLocator x:Key="IntanceLocator" />
+			* Key, es el nombre o llave por el que llamaremos la clase IntanceLocator
+
+	- Creamos las vistas.
+		* Agregamos el BindingContext, usando el diccionario de recursos IntanceLocator:
+		=> BindingContext="{Binding MainViewModel, Source= {StaticResource IntanceLocator}}"
+			* MainViewModel, nombre del objeto creado en la IntanceLocator.
+			* Source, Nombre de la llave en el diccionario de recursos.
+		
+
+ 
