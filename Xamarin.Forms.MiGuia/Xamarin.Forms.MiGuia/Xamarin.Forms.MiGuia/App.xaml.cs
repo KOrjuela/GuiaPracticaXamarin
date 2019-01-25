@@ -1,16 +1,17 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+﻿[assembly: Xamarin.Forms.Xaml.XamlCompilation(Xamarin.Forms.Xaml.XamlCompilationOptions.Compile)]
 namespace Xamarin.Forms.MiGuia
 {
+    using Xamarin.Forms;
+    using Xamarin.Forms.MiGuia.Utilities.Helpers;
+
     public partial class App : Application
     {
-        public App()
+        public App(string SqliteConnection)
         {
             InitializeComponent();
 
+            if (string.IsNullOrEmpty(Settings.SqliteConnection))
+                Settings.SqliteConnection = SqliteConnection;
             MainPage = new MainPage();
         }
 

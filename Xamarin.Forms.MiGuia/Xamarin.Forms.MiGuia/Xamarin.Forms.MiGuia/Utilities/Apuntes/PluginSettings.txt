@@ -1,0 +1,64 @@
+﻿Este complemento garantiza la configuración más rápida, segura y confiable de creación y edición por aplicación. 
+Además, funciona con cualquier aplicación de Xamarin, no solo con Xamarin.Forms.
+
+Dado que los datos se almacenan de forma nativa en cada plataforma, solo el complemento de configuración admite 
+ciertos tipos de datos:
+
+	*Boolean 
+	*Int32 
+	*Int64 
+	*String 
+	*Single(float) 
+	*Double 
+	*Decimal 
+	*DateTime (Stored and retrieved in UTC).
+
+
+Configuración:
+
+	- Agregamos el Plugin: Xam.Plugins.Settings, en los diferentes proyectos de la aplicacion 
+		* Android
+		* iOS 
+		* Windows
+
+	- Agregue en el proyecto portable, una carpeta Helpers y cree en esta una clase: Settings
+
+	- Inicializamos la implementacion del Setting 
+		* private static ISettings AppSettings => CrossSettings.Current;
+
+	- Agregamos los valores a almacenar. Ejemplo:
+
+	    public static string UserName  
+        {  
+            get => AppSettings.GetValueOrDefault(nameof(UserName), string.Empty);  
+            set => AppSettings.AddOrUpdateValue(nameof(UserName), value);  
+        }  
+  
+        public static string Password  
+        {  
+            get => AppSettings.GetValueOrDefault(nameof(Password), string.Empty);  
+            set => AppSettings.AddOrUpdateValue(nameof(Password), value);  
+        }  
+  
+        public static string MobileNumber  
+        {  
+            get => AppSettings.GetValueOrDefault(nameof(MobileNumber), string.Empty);  
+            set => AppSettings.AddOrUpdateValue(nameof(MobileNumber), value);  
+        }  
+
+	- Finalmente agregamos una clase qie limpa todos los datos guardados 
+
+		public static void ClearAllData()  
+        {  
+            AppSettings.Clear();  
+        } 
+
+
+Almacenar datos en Setting:
+	
+	- En la clase donde lo vamos a usar agregamos
+
+		* Helpers.Settings.UserName = NombreUsuario.Text;
+
+		* NombreUsuario.Text = Helpers.Settings.UserName
+

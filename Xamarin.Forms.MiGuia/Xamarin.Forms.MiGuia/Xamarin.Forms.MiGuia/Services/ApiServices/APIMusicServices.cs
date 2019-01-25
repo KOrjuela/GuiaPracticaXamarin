@@ -29,9 +29,9 @@
         /// <remarks>
         /// Autor: Carlos Orjuela 
         /// </remarks>
-        public async Task<bool> AddItemAsync(Music cancion)
+        public async Task<bool> AddEntityAsync(Music cancion)
         {
-            return await this.ApiServicesMusic.AddItemAsync(cancion);
+            return await this.ApiServicesMusic.AddEntityAsync(cancion);
         }
 
         /// <summary>
@@ -42,9 +42,9 @@
         /// <remarks>
         /// Autor: Carlos Orjuela 
         /// </remarks>
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteEntityAsync(string id)
         {
-            return await this.ApiServicesMusic.DeleteItemAsync(id);
+            return await this.ApiServicesMusic.DeleteEntityAsync(id);
         }
 
         /// <summary>
@@ -55,9 +55,9 @@
         /// <remarks>
         /// Autor: Carlos Orjuela 
         /// </remarks>
-        public async Task<Music> GetItemAsync(string id)
+        public async Task<Music> GetEntityAsync(string id)
         {
-            return await this.ApiServicesMusic.GetItemAsync(id);
+            return await this.ApiServicesMusic.GetEntityAsync(id);
         }
 
         /// <summary>
@@ -67,9 +67,9 @@
         /// <remarks>
         /// Autor: Carlos Orjuela 
         /// </remarks>
-        public async Task<IEnumerable<Music>> GetItemsAsync()
+        public async Task<IEnumerable<Music>> GetEntityAsync()
         {
-            return await this.ApiServicesMusic.GetItemsAsync();
+            return await this.ApiServicesMusic.GetEntityAsync();
         }
 
         /// <summary>
@@ -80,9 +80,9 @@
         /// <remarks>
         /// Autor: Carlos Orjuela 
         /// </remarks>
-        public async Task<bool> UpdateItemAsync(Music newCancion)
+        public async Task<bool> UpdateEntityAsync(Music newCancion)
         {
-            return await this.ApiServicesMusic.UpdateItemAsync(newCancion);
+            return await this.ApiServicesMusic.UpdateEntityAsync(newCancion);
         }
 
     }

@@ -1,0 +1,3 @@
+﻿- Agregamos a la solucion el siguiente Nuget: Microsoft.EntityFrameworkCore.Sqlite
+
+- Creamos el DatabaseContext

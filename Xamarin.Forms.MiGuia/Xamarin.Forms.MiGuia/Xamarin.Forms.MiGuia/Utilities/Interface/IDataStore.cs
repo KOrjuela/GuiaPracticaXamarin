@@ -13,7 +13,7 @@
         /// <remarks>
         /// Autor: Carlos Orjuela 
         /// </remarks>
-        Task<bool> AddItemAsync(T item);
+        Task<bool> AddEntityAsync(T item);
 
         /// <summary>
         /// Actualiza entidad en el origen de datos
@@ -23,7 +23,7 @@
         /// <remarks>
         /// Autor: Carlos Orjuela 
         /// </remarks>
-        Task<bool> UpdateItemAsync(T item);
+        Task<bool> UpdateEntityAsync(T item);
 
         /// <summary>
         /// Elimina entidad en el origen de datos
@@ -33,7 +33,7 @@
         /// <remarks>
         /// Autor: Carlos Orjuela 
         /// </remarks>
-        Task<bool> DeleteItemAsync(string id);
+        Task<bool> DeleteEntityAsync(string id);
 
         /// <summary>
         /// Obtiene entidad del origen de datos
@@ -43,7 +43,7 @@
         /// <remarks>
         /// Autor: Carlos Orjuela 
         /// </remarks>
-        Task<T> GetItemAsync(string id);
+        Task<T> GetEntityAsync(string id);
 
         /// <summary>
         /// Obtiene lista de entidades del origen de datos
@@ -52,6 +52,6 @@
         /// <remarks>
         /// Autor: Carlos Orjuela 
         /// </remarks>
-        Task<IEnumerable<T>> GetItemsAsync();
+        Task<IEnumerable<T>> GetEntityAsync();
     }
 }
